@@ -9,7 +9,7 @@ class LoginPage extends StatelessWidget {
       backgroundColor: Theme.of(context).colorScheme.background,
       body: Column(
         children: [
-          //logo jll
+          //logo
 
           //message, app slogan
 
