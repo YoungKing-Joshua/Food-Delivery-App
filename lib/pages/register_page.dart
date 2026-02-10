@@ -2,36 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:food_ordering_app/components/my_textfield.dart';
 import 'package:food_ordering_app/components/my_button.dart';
 
-import 'home_page.dart';
-
-class LoginPage extends StatefulWidget {
+class RegisterPage extends StatefulWidget {
   final void Function()? onTap;
 
-  const LoginPage({super.key, required this.onTap});
+  const RegisterPage({super.key, required this.onTap});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   // text editing controllers
   final TextEditingController emailController = TextEditingController();
-
   final TextEditingController passwordController = TextEditingController();
-
-  // login method
-  void login() {
-    /*
-     fill out authentication here..
-
-    */
-
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => const HomePage()),
-    );
-    // navigate to home page after successful login
-  }
+  final TextEditingController confirmPasswordController =
+      TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -40,16 +25,16 @@ class _LoginPageState extends State<LoginPage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          //logox111
+          // logo
           Icon(
-            Icons.lock_open_rounded,
+            Icons.person_add_alt_1_rounded,
             size: 100,
             color: Theme.of(context).colorScheme.inversePrimary,
           ),
 
-          //message, app slogan
+          // message, app slogan
           Text(
-            'Food Delivery App',
+            "Let's create an account for you!",
             style: TextStyle(
               fontSize: 16,
               color: Theme.of(context).colorScheme.inversePrimary,
@@ -58,31 +43,38 @@ class _LoginPageState extends State<LoginPage> {
 
           const SizedBox(height: 25),
 
-          //email textfeild
+          // email textfield
           MyTextField(
             controller: emailController,
             hintText: 'Email',
             obscureText: false,
           ),
 
-          //password textfeild
+          // password textfield
           MyTextField(
             controller: passwordController,
             hintText: 'Password',
             obscureText: true,
           ),
 
-          //login button
-          MyButton(text: 'Sign In', onTap: login),
+          // confirm password textfield
+          MyTextField(
+            controller: confirmPasswordController,
+            hintText: 'Confirm Password',
+            obscureText: true,
+          ),
+
+          // register button
+          MyButton(text: 'Sign Up', onTap: () {}),
 
           const SizedBox(height: 25),
 
-          //not a member? register now
+          // already a member? sign in
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'Not a member?',
+                'Already have an account?',
                 style: TextStyle(
                   color: Theme.of(context).colorScheme.inversePrimary,
                 ),
@@ -91,7 +83,7 @@ class _LoginPageState extends State<LoginPage> {
               GestureDetector(
                 onTap: widget.onTap,
                 child: Text(
-                  'Register now',
+                  'Login',
                   style: TextStyle(
                     color: Theme.of(context).colorScheme.inversePrimary,
                     fontWeight: FontWeight.bold,

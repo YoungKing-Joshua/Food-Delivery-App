@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:food_ordering_app/themes/theme_provider.dart';
+import 'package:food_ordering_app/pages/login_page.dart';
+import 'package:food_ordering_app/pages/register_page.dart';
+import 'package:food_ordering_app/auth/login_or_register.dart';
 import 'package:provider/provider.dart';
 import 'pages/login_page.dart';
 
@@ -18,9 +21,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Login',
       debugShowCheckedModeBanner: false,
-      home: const LoginPage(),
+      home: LoginOrRegister(),
       theme: Provider.of<ThemeProvider>(context).themeData,
     );
   }
