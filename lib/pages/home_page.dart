@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:food_ordering_app/components/my_current_location.dart';
+
 import 'package:food_ordering_app/components/my_silver_app.dart';
 
 class HomePage extends StatefulWidget {
@@ -24,6 +26,7 @@ class _HomePageState extends State<HomePage> {
                   endIndent: 25,
                   color: Theme.of(context).colorScheme.secondary,
                 ),
+                MyCurrentLocation(),
               ],
               //My Current Location
 
