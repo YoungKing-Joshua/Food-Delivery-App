@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 
 class MyDescriptionBox extends StatelessWidget {
@@ -20,14 +18,25 @@ class MyDescriptionBox extends StatelessWidget {
         border: Border.all(color: Theme.of(context).colorScheme.secondary),
       ),
       padding: const EdgeInsets.all(25),
+      margin: const EdgeInsets.only(left: 25, right: 25, bottom: 25),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           // delivery fee
-          Column(children: [Text('\$0.99'), Text('Delivery Fee')]),
+          Column(
+            children: [
+              Text('\$0.99', style: myPrimaryTextStlye),
+              Text('Delivery Fee', style: mySecondaryTextStlye),
+            ],
+          ),
 
           //delivery time
-          Column(children: [Text('15-30mins'), Text('Delivery Time')]),
+          Column(
+            children: [
+              Text('15-30mins', style: mySecondaryTextStlye),
+              Text('Delivery Time', style: myPrimaryTextStlye),
+            ],
+          ),
         ],
       ),
     );
