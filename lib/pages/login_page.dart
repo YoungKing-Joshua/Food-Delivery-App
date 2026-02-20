@@ -25,12 +25,11 @@ class _LoginPageState extends State<LoginPage> {
      fill out authentication here..
 
     */
-
+    // navigate to home page after successful login
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => const HomePage()),
     );
-    // navigate to home page after successful login
   }
 
   @override
@@ -72,7 +71,7 @@ class _LoginPageState extends State<LoginPage> {
             obscureText: true,
           ),
 
-          //login button
+          //Sign In button
           MyButton(text: 'Sign In', onTap: login),
 
           const SizedBox(height: 25),

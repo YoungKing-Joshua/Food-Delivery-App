@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_ordering_app/components/my_current_location.dart';
+import 'package:food_ordering_app/components/my_description_box.dart';
+import 'package:food_ordering_app/components/my_drawer.dart';
 
 import 'package:food_ordering_app/components/my_silver_app.dart';
 
@@ -14,10 +16,11 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(),
+      drawer: MyDrawer(),
       body: NestedScrollView(
         headerSliverBuilder: (context, innerBoxIsScrolled) => [
           MySilverAppBar(
+            title: Text('title'),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
@@ -26,13 +29,14 @@ class _HomePageState extends State<HomePage> {
                   endIndent: 25,
                   color: Theme.of(context).colorScheme.secondary,
                 ),
-                MyCurrentLocation(),
-              ],
-              //My Current Location
 
-              //Description Box,
+                //My Current Location
+                const MyCurrentLocation(),
+
+                //Description Box,
+                const MyDescriptionBox(),
+              ],
             ),
-            title: Text('title'),
           ),
         ],
         body: Container(color: Colors.blue),
