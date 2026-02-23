@@ -5,6 +5,7 @@ import 'package:food_ordering_app/components/my_drawer.dart';
 
 import 'package:food_ordering_app/components/my_silver_app.dart';
 import 'package:food_ordering_app/components/my_tab_bar.dart';
+import 'package:food_ordering_app/models/food.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -21,7 +22,10 @@ class _HomePageState extends State<HomePage>
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 3, vsync: this);
+    _tabController = TabController(
+      length: FoodCategory.values.length,
+      vsync: this,
+    );
   }
 
   @override
@@ -61,10 +65,24 @@ class _HomePageState extends State<HomePage>
           children: [
             ListView.builder(
               itemCount: 5,
-              itemBuilder: (context, index) => Text("Hello"),
+              itemBuilder: (context, index) => Text("first Tab item"),
             ),
-            Text("flutter"),
-            Text("code"),
+            ListView.builder(
+              itemCount: 5,
+              itemBuilder: (context, index) => Text("second Tab item"),
+            ),
+            ListView.builder(
+              itemCount: 5,
+              itemBuilder: (context, index) => Text("third Tap item"),
+            ),
+            ListView.builder(
+              itemCount: 5,
+              itemBuilder: (context, index) => Text("third Tap item"),
+            ),
+            ListView.builder(
+              itemCount: 5,
+              itemBuilder: (context, index) => Text("third Tap item"),
+            ),
           ],
         ),
       ),
