@@ -1,0 +1,28 @@
+class Food {
+  final String name; //cheese burger
+  final String description; // a bager full of cheese
+  final String imagePath; //lib/images/cheese_burger.jpg
+  final double price;
+  final FoodCategory category;
+  List<Addon> availableAddon;
+
+  Food({
+    required this.name,
+    required this.description,
+    required this.imagePath,
+    required this.price,
+    required this.category,
+    required this.availableAddon,
+  });
+}
+
+// food category
+enum FoodCategory { burgery, salads, sides, desserts, drinks }
+
+// food addons
+class Addon {
+  String name;
+  double price;
+
+  Addon({required this.name, required this.price});
+}
